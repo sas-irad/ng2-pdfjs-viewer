@@ -1,6 +1,6 @@
 {
-  "name": "ng2-pdfjs-viewer",
-  "version": "0.2.29",
+  "name": "@sas-irad/ng2-pdfjs-viewer-ang2",
+  "version": "0.2.30",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
@@ -16,11 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/intbot/ng2-pdfjs-viewer"
+    "url": "https://github.com/sas-irad/ng2-pdfjs-viewer/tree/ang2"
   },
   "author": {
-    "name": "Code1",
-    "email": "codehippie1@gmail.com"
+    "name": "Sasha Renninger",
+    "email": "sashafr@upenn.edu"
   },
   "keywords": [
     "angular",
