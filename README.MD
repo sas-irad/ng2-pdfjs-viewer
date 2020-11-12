@@ -8,6 +8,8 @@
   </a>
 </p>
 
+**NOTE**: This is a modified version of the original library that has been tweaked for SAS-IRAD projects to work in our older environment
+
 This is a simple library wraps mozilla's pdfjs and viewerjs into an angular2+ component.
 
 ### Open in a new tab/window
@@ -21,7 +23,7 @@ This is a simple library wraps mozilla's pdfjs and viewerjs into an angular2+ co
 ## Step 1: To install `ng2-pdfjs-viewer`, run:
 
 ```bash
-$ npm install ng2-pdfjs-viewer --save
+$ npm install @sas-irad/ng2-pdfjs-viewer --save
 ```
 
 And then configure it in your Angular `AppModule`:
@@ -33,7 +35,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import PdfJsViewerModule module
-import { PdfJsViewerModule } from 'ng2-pdfjs-viewer';
+import { PdfJsViewerModule } from '@sas-irad/ng2-pdfjs-viewer';
 
 @NgModule({
   declarations: [
@@ -105,7 +107,7 @@ For [externalWindow]="true" to work, pop-ups needs to be enabled at browser leve
 
 <!-- Please note, you need a copy of https://github.com/intbot/ng2-pdfjs-viewer/tree/master/pdfjs for some of the below features to work -->
 <div style="width: 800px; height: 400px">
-  <ng2-pdfjs-viewer 
+  <ng2-pdfjs-viewer
     #pdfViewer
     [pdfJsFolder]="'pdfjs'"
     [externalWindow]="true"
@@ -131,7 +133,7 @@ export class RateCardComponent implements OnInit {
 
   public openPdf() {
     let url = "url to fetch pdf as byte array";
-    // url can be local url or remote http request to an api/pdf file. 
+    // url can be local url or remote http request to an api/pdf file.
     // E.g: let url = "assets/pdf-sample.pdf";
     // E.g: https://github.com/intbot/ng2-pdfjs-viewer/tree/master/sampledoc/pdf-sample.pdf
     // E.g: http://localhost:3000/api/GetMyPdf
@@ -178,7 +180,7 @@ public IActionResult GetReport()
    //    Inline = true
    //};
    //Response.Headers.Add("Content-Disposition", cd.ToString());
-   
+
    return File(bytes, "application/pdf")
 }
 ```
@@ -191,7 +193,7 @@ public IActionResult GetMyPdf()
 {
    var stream = await {{__get_stream_here__}}
    return File(stream, "application/pdf")); // FileStreamResult
-   
+
   // OR
   // var bytes = await {{__get_bytes_here__}}
   // return File(bytes, "application/pdf")
